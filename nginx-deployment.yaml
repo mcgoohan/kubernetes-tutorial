@@ -1,12 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
+  name: my-nginx
 spec:
   selector:
     matchLabels:
       app: nginx
-  replicas: 1
+  replicas: 4
   template:
     metadata:
       labels:
@@ -17,3 +17,17 @@ spec:
         image: nginx:1.15.0
         ports:
         - containerPort: 80
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 30
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 15
+          periodSeconds: 3
+      # nodeSelector:
+      #   storageType: ssd
