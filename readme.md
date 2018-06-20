@@ -92,6 +92,12 @@ To view the minikube kubernetes dashboard in the browser type the followig comma
 ```
 $ minikube dashboard
 ```
+or 
+
+```
+$ kubectl proxy 
+```
+and navigate to http://localhost:8001/ui
 
 ### Scale an existing deployment
 ```
