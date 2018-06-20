@@ -12,8 +12,11 @@
 You need to install kubectl and minikube. You will also need virtualbox installed.
 
 ### Installing kubectl
+
 ###### MacOS
-`brew install kubectl`
+```
+brew install kubectl
+```
 ###### Debian (Ubuntu)
 ```
 sudo apt-get update && sudo apt-get install -y apt-transport-https
@@ -24,27 +27,39 @@ sudo apt-get update
 sudo apt-get install -y kubectl
 ```
 ###### As part of the Google Cloud SDK
-`gcloud components install kubectl`
+```
+gcloud components install kubectl
+```
 
 ### Installing minikube
- ###### MacOS
-`curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.28.0/minikube-darwin-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/`
+###### MacOS
+```
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.28.0/minikube-darwin-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+```
 ###### Debian (Ubuntu)
-`curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.28.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/`
+```
+curl -Lo minikube https://storage.googleapis.com/minikube/releases/v0.28.0/minikube-linux-amd64 && chmod +x minikube && sudo mv minikube /usr/local/bin/
+```
 
 ## Running kubernetes
 
 ### Starting and stoping minikube
 You will need to start minikube before you can start playing around with kubernetes and kubectl commands.
 
-`minikube start`
+```
+minikube start
+```
 
 When you are done, you have blow everything away by stoping minikube again.
 
-`minikube stop`
+```
+minikube stop
+```
 
 ### Verify kubectl is working
-`kubectl cluster-info`
+```
+kubectl cluster-info
+```
 
 ### Run sample application
 
@@ -74,5 +89,7 @@ kubectl describe pod nginx-deployment-56b8664f97-bj45s
 
 To view the minkube kubernetes dashboard in the browser type the followig command:
 
-`minikube dashboard`
+```
+minikube dashboard
+```
 
